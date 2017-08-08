@@ -3,7 +3,7 @@
 
 Name: rubygem-%{gem_name}
 Version: 3.2016.0521
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A registry for information about MIME media type definitions
 Group: Development/Languages
 License: MIT
@@ -12,6 +12,7 @@ Source0: https://rubygems.org/gems/%{gem_name}-%{version}.gem
 BuildRequires: ruby(release)
 BuildRequires: rubygems-devel
 BuildRequires: ruby >= 2.0
+Provides:      rubygem(%{gem_name}) = %{version}
 BuildArch: noarch
 
 %description
@@ -77,5 +78,8 @@ popd
 %{gem_instdir}/Rakefile
 
 %changelog
+* Tue Aug 08 2017 Matthias Runge <mrunge@redhat.com> - 3.2016.0521-2
+- add provides for rubygem(mime-data-types)
+
 * Thu Jun 30 2016 Vít Ondruch <vondruch@redhat.com> - 3.2016.0521-1
 - Initial package
